@@ -10,6 +10,13 @@ $(document).ready(function() {
   let winsX = 0;  //starting value for 1st player win counter
   let winsY = 0; //starting value for 2nd player win counter
 
+  function createBoard(){
+    for (var i = 0; i < 30; i++) {
+      $('#player1').append('<div class="box"></div>');
+      $('#player2').append('<div class="box"></div>');
+    }
+  }
+
   function checkForWinner(){
     if (winner !== 1){
         if (indexX === 29){
@@ -25,6 +32,8 @@ $(document).ready(function() {
       //score tracker
       $('h4').text(`Top Player ${winsX} : ${winsY} Bottom Player`)
     }
+
+  createBoard();
 
   $(document).on('keydown', function(event){
     ///1st. player push A
