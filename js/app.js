@@ -3,43 +3,47 @@ $(document).ready(function() {
   console.log('document ready');
   // all code to manipulate the DOM
   // goes inside this function
-  let indexX=0;
-  let indexY=0;
-  let winner = 0;
+
+  let indexX = 0; //starting index position for 1st player
+  let indexY = 0; //starting index position for 2nd player
+  let winner = 0; //temp value to control winner popup
+  let winsX = 0;  //starting value for 1st player win counter
+  let winsY = 0; //starting value for 2nd player win counter
 
   function checkForWinner(){
     if (winner !== 1){
         if (indexX === 11){
           winner = 1;
-          setTimeout(function(){ alert(`Player 1 WINS!!!!!!`); }, 100);
+          winsX ++; //victory counter
+          setTimeout(function(){ alert(`Player 1 WINS!!!!!!`); }, 500);
         }else if (indexY === 11){
           winner = 1;
-          setTimeout(function(){ alert(`Player 2 WINS!!!!!!`); }, 100);
+          winsY ++; //victory counter
+          setTimeout(function(){ alert(`Player 2 WINS!!!!!!`); }, 500);
         }
       }
-  }
+      //score tracker
+      $('h4').text(`Top Player ${winsX} : ${winsY} Bottom Player`)
+    }
 
   $(document).on('keydown', function(event){
-
-    ///player 1 push A
+    ///1st. player push A
     if (event.keyCode === 65){
       console.log('letter A got pushed');
       $('#player1 .box').eq(indexX).addClass('X');
       checkForWinner()
       indexX ++;
     }
-
-    /// player 2 push L
+    ///2nd player push L
     if (event.keyCode === 76){
       console.log('letter A got pushed');
       $('#player2 .box').eq(indexY).addClass('Y');
       checkForWinner()
       indexY ++;
     }
-
   })
 
-  //game reset
+  //game reset button
   $('button').on('click', function(event){
     $('.box').removeClass('X');
     $('.box').removeClass('Y');
