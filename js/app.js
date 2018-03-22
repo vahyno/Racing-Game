@@ -6,7 +6,7 @@ $(document).ready(function() {
 
   let indexX = 0; //starting index position for 1st player
   let indexY = 0; //starting index position for 2nd player
-  let winner = 0; //temp value to control winner popup
+  let winner = false; //temp value to control winner popup
   let winsX = 0;  //starting value for 1st player win counter
   let winsY = 0; //starting value for 2nd player win counter
 
@@ -18,13 +18,13 @@ $(document).ready(function() {
   }
 
   function checkForWinner(){
-    if (winner !== 1){
+    if (winner !== true){
         if (indexX === 29){
-          winner = 1;
+          winner = true;
           winsX ++; //victory counter
           setTimeout(function(){ alert(`Player 1 WINS!!!!!!`); }, 500);
         }else if (indexY === 29){
-          winner = 1;
+          winner = true;
           winsY ++; //victory counter
           setTimeout(function(){ alert(`Player 2 WINS!!!!!!`); }, 500);
         }
@@ -62,3 +62,11 @@ $(document).ready(function() {
   })
 
 });
+
+
+
+//function chaosKeyAssign(){
+//  let currentKeyIndex = Math.ceil(Math.random())
+//}
+//
+//

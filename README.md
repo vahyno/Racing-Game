@@ -10,3 +10,4 @@
 
 ### Unsolved problems
 * Adding time restricting **timer**.
+* Adding chaos mode, random key assignment so players have to push set of different keys. Have players to fight over the keyboard.
