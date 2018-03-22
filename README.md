@@ -1,7 +1,7 @@
 # Project 0: The Rainbow Race
 
 ### description
-* Siple racing game, players grow a rainbow bar across the screen using letter 'A' / 'L' first one to finish wins.
+* Racing game, players grow a rainbow bar across the screen using letter 'A' / 'L' first one to finish wins.
 
 ### Technologies used
 * HTML for laying down the game board.
