@@ -12,11 +12,11 @@ $(document).ready(function() {
 
   function checkForWinner(){
     if (winner !== 1){
-        if (indexX === 11){
+        if (indexX === 29){
           winner = 1;
           winsX ++; //victory counter
           setTimeout(function(){ alert(`Player 1 WINS!!!!!!`); }, 500);
-        }else if (indexY === 11){
+        }else if (indexY === 29){
           winner = 1;
           winsY ++; //victory counter
           setTimeout(function(){ alert(`Player 2 WINS!!!!!!`); }, 500);
